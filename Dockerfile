@@ -3,7 +3,7 @@ FROM docker.io/openresty/openresty:bookworm-fat@sha256:6868141b2d800e2cb6fc82c4c
 ARG LUA_OIDC_VERSION=1.9.0
 RUN luarocks install lua-resty-openidc ${LUA_OIDC_VERSION}
 
-FROM gcr.io/distroless/base-debian12:nonroot@sha256:4ae8d0163a6f04d96f36e41324d76f00744f0db7545b6d04039c9e6fa1df77f3
+FROM gcr.io/distroless/base-debian12:nonroot@sha256:4b5196599229a5cf312a676cfe1ee8587ecf2371dcc22620f8c7a66d77d125c8
 LABEL org.opencontainers.image.source="https://github.com/claudio4/openresty-oidc-distroless"
 
 COPY --from=builder --chown=nonroot:nonroot /usr/local/openresty /usr/local/openresty
