@@ -1,6 +1,6 @@
 FROM docker.io/openresty/openresty:bookworm-fat@sha256:4e73f525761f56b1256d2fabf1a70223b2f9f40788ef387e0ec8559f26ecb05b AS builder
 
-ARG LUA_OIDC_VERSION=1.9.1
+ARG LUA_OIDC_VERSION=1.9.2
 RUN luarocks install lua-resty-openidc ${LUA_OIDC_VERSION}
 
 FROM gcr.io/distroless/base-debian12:nonroot@sha256:7f0c72cd138b442ae0deeb69c08b1acf5525439ba251a49ad93c320a061567e5
